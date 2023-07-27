@@ -2,16 +2,23 @@
 const parola = prompt("immettere una parola");
 
 // verificare che la parola sia uguale alla sua inversa
-let inversa = "";
-
-for (let i = parola.length - 1; i >= 0; i--) {
-  inversa = inversa + parola[i];
-}
-
-if (parola == inversa) {
-  console.log("E' palindroma");
+let esito = isPalindrome(parola);
+if (esito) {
+  console.log("La parola è palindroma");
 } else {
-  console.log("Non è palindroma");
+  console.log("La parola non è palindroma");
 }
+// questa funzione verifica se la parola è palindroma
+function isPalindrome(value) {
+  let inversa = "";
 
-console.log(inversa);
+  for (let i = value.length - 1; i >= 0; i--) {
+    inversa = inversa + value[i];
+  }
+
+  if (value == inversa) {
+    return true;
+  } else {
+    return false;
+  }
+}
